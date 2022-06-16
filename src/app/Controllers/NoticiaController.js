@@ -14,6 +14,9 @@ export default new class NoticiaController{
         const {id_categoria} = req.params;
         const { titulo, conteudo } = req.body;
         let conn = await connection();
+        let isCategoryExists = (await conn.execute(`SELECT id FROM categoria WHERE id = ${id_categoria}`))[0];
+        if(isCategoryExists)
+            return res.status(404).json({error: "Category not found."});
         let isAlreadyExists = (await conn.execute(`SELECT id, titulo FROM noticia WHERE titulo = '${titulo}' AND id_categoria = ${id_categoria}`))[0][0];
         if(isAlreadyExists)
             return res.status(401).json({error: "News is already exists."});
