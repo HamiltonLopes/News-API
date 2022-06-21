@@ -8,7 +8,7 @@ import NoticiaController from './app/Controllers/NoticiaController.js';
 dotenv.config();
 const Routes = new Router();
 
-Routes.get('/', (req, res) => res.send('Hello'));
+Routes.get('/', (req, res) => res.send('News-API - Endpoint padrão!'));
 
 Routes.get(`/categorias`, CategoriaController.index);
 Routes.post(`/categorias`, CategoriaController.store);

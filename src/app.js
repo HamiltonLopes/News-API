@@ -15,7 +15,7 @@ class App {
     middlewares(){
         this.server.use(bodyParser.json());
         this.server.use(bodyParser.urlencoded({ extended: false }));
-        this.server.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+        this.server.use(`/${process.env.API_NAME}/${process.env.API_VERSION}/api-docs`, swaggerUi.serve, swaggerUi.setup(swaggerDocs));
     }
 
     routes(){
