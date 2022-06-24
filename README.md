@@ -29,7 +29,6 @@ As seguintes ferramentas foram usadas na construção do projeto:
 As seguintes melhorias precisam ser feitas para aprimoramento do projeto
 
 Principais Pontos de Melhoria:
- - Implementação de notificações também para o usuário que fez o agendamento
  - Incorporar a api a um sistema de jornal
  - Criar endpoint de update de noticias e categorias
  - Criar ordenação e paginação das listagens de noticias e categorias
